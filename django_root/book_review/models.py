@@ -1,5 +1,7 @@
 import uuid
+import datetime
 from django.db import models
+
 
 # Create your models here.
 class BookReview(models.Model):
@@ -14,14 +16,14 @@ class BookReview(models.Model):
   tags = models.TextField()
 
   def __init__(self,
-    title,
-    author,
-    review,
-    summary,
-    genre,
-    rating,
-    date_entered,
-    tags):
+    title='',
+    author='',
+    review='',
+    summary='',
+    genre=0,
+    rating=0,
+    date_entered=datetime.datetime.today(),
+    tags=''):
     self.title = title
     self.author = author
     self.review = review
